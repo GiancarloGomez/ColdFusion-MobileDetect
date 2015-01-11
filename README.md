@@ -27,6 +27,7 @@ This CFC is script based and written using some of the new language enhancements
 The one main difference is the "is" function. As it is a reserved word in ColdFusion I had to chage it to "_is". Below are some examples of how to use.
 
 ```ColdFusion
+<cfscript>
 MobileDetect = new MobileDetect();
 
 // Basic Detection
@@ -50,6 +51,7 @@ MobileDetect.mobileGrade();
 // Overwrite UserAgent or HttpHeaders to use
 MobileDetect.setUserAgent(userAgent); // string
 MobileDetect.setHttpHeaders(httpHeaders); // struct
+</cfscript>
 ```
 
 This should help you familiarize with how the CFC works. You can compare it to their Wiki Page and get even more examples of how to use).
