@@ -26,7 +26,7 @@ This CFC is script based and written using some of the new language enhancements
 ###Differences from PHP Library
 The one main difference is the "is" function. As it is a reserved word in ColdFusion I had to chage it to "_is". Below are some examples of how to use.
 
-```coldfusion
+```ColdFusion
 MobileDetect = new MobileDetect();
 
 // Basic Detection
