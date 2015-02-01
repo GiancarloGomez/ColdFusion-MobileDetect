@@ -726,8 +726,12 @@ component{
             // set a new key to store the string pieces of the matches
             matches.strings = [];
 
-            for (var i = 1; i <= matches.len.len(); i++)
-                matches.strings.append( mid(userAgent,matches.pos[i],matches.len[i]) );
+            for (var i = 1; i <= matches.len.len(); i++){
+                // make sure we only append strings where the match has a length as a 0 value will error out
+                if (matches.len[i])
+                    matches.strings.append( mid(userAgent,matches.pos[i],matches.len[i]) );
+            }
+
 
             setMatchingRegex(arguments.regex);
             setMatchesStruct(matches);
