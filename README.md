@@ -15,10 +15,10 @@ http://mobiledetect.net/
 I've used this library in various PHP projects and decided to port it over to be able to use
 in my ColdFusion Projects.
 
-The library is used for detecting mobile devices (including tablets). 
+The library is used for detecting mobile devices (including tablets).
 It uses the UserAgent string combined with specific HTTP headers to detect the mobile environment.
 
-This current version is based on their 2.8.11 release
+This current version is based on their 2.8.22 release
 
 ###Supported Versions
 This CFC is script based and written using some of the new language enhancements in ColdFusion 11. Although making it compatible with earlier versions can be done by replacing the code using the Member Functions for their previous equivalent global functions.
@@ -55,6 +55,14 @@ MobileDetect.setHttpHeaders(httpHeaders); // struct
 ```
 
 This should help you familiarize with how the CFC works. You can compare the examples above to their Wiki Page and get even more examples on how to use.
+
+You can also run the example included by executing in your local ColdFusion install or simply use [CommandBox](https://www.ortussolutions.com/products/commandbox) to run and execute.
+
+After installing CommandBox, browse to the directory of this repo and type the following and then browse to the examples folder:
+
+```Bash
+box server start
+```
 
 https://github.com/serbanghita/Mobile-Detect/wiki/Code-examples
 
