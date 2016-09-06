@@ -73,6 +73,9 @@
 						<dd>#cgi.HTTP_USER_AGENT#</dd>
 					</dl>
 				</div>
+				<p class="text-success">
+					Hint : Use your browser's developer tools to change and test your user agent.
+				</p>
 				<p>
 					Please help me improve the mobile detection component by:
 					<ol>
