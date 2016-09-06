@@ -54,17 +54,20 @@ MobileDetect.setHttpHeaders(httpHeaders); // struct
 </cfscript>
 ```
 
-This should help you familiarize with how the CFC works. You can compare the examples above to their Wiki Page and get even more examples on how to use.
+This should help you familiarize with how the CFC works.
+You can compare the examples above to their Wiki Page and get even more examples on how to use.
 
-You can also run the example included by executing in your local ColdFusion install or simply use [CommandBox](https://www.ortussolutions.com/products/commandbox) to run and execute.
+https://github.com/serbanghita/Mobile-Detect/wiki/Code-examples
+
+You can also run the examples included by executing in your local ColdFusion install or simply use [CommandBox](https://www.ortussolutions.com/products/commandbox) to run and execute.
 
 After installing CommandBox, browse to the directory of this repo and type the following and then browse to the examples folder:
 
 ```Bash
 box server start
 ```
-
-https://github.com/serbanghita/Mobile-Detect/wiki/Code-examples
+Examples are also available here<br />
+http://www.fusedevelopments.com/examples/mobile-detect/
 
 
 
