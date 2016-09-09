@@ -1,6 +1,6 @@
 {
     "name":"ColdFusion-MobileDetect",
-    "version":"2.0.0",
+    "version":"2.1.0",
     "author":"Giancarlo Gomez <giancarlo.gomez@gmail.com>",
     "location":"GiancarloGomez/ColdFusion-MobileDetect",
     "directory":"",
@@ -20,7 +20,7 @@
     "changelog":"",
     "type":"projects",
     "keywords":[
-
+        
     ],
     "private":false,
     "engines":[
@@ -42,16 +42,17 @@
         "Giancarlo Gomez <giancarlo.gomez@gmail.com>"
     ],
     "dependencies":{
-
+        
     },
     "devDependencies":{
-
+        
     },
     "installPaths":{
-
+        
     },
     "scripts":{
-
+        "postVersion":"package set location='GiancarloGomez/ColdFusion-MobileDetect#v`package version`'",
+        "postPublish":"!git push --follow-tags"
     },
     "ignore":[
         "**/.*",
@@ -66,7 +67,7 @@
             }
         ],
         "labels":[
-
+            
         ],
         "reporter":"",
         "reporterResults":"",
@@ -78,11 +79,11 @@
             "recurse":true
         },
         "watchers":[
-
+            
         ],
         "notify":{
             "emails":[
-
+                
             ],
             "growl":"",
             "URL":""
