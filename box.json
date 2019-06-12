@@ -1,6 +1,6 @@
 {
-    "name":"ColdFusion-MobileDetect",
-    "slug":"coldfusion-mobiledetect",
+    "name":"MobileDetect",
+    "slug":"mobiledetect",
     "version":"2.2.0",
     "author":"Giancarlo Gomez <giancarlo.gomez@gmail.com>",
     "location":"GiancarloGomez/ColdFusion-MobileDetect",
