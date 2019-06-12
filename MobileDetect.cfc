@@ -22,7 +22,7 @@
  *
  * This current version is based on their 2.8.11 release
 
- * @version     2.0.0
+ * @version     2.2.0
  * @name        MobileDetect
  * @license     Code and contributions have "MIT License"
  *              More details: https://github.com/GiancarloGomez/ColdFusion-MobileDetect/blob/master/LICENSE.md
@@ -37,7 +37,7 @@ component output="false" accessors="true"{
     /**
     * Stores the version number of the current release
     */
-    property name="VERSION" type="string" default="2.0.0";
+    property name="VERSION" type="string" default="2.2.0";
 
     /**
     * Sets how you want a version number returned, either as a float or a string (no float parsing)
@@ -159,11 +159,12 @@ component output="false" accessors="true"{
              // http://www.wolfgangmobile.com/
             "Wolfgang"      : "AT-B24D|AT-AS50HD|AT-AS40W|AT-AS55HD|AT-AS45q2|AT-B26D|AT-AS50Q",
             "Alcatel"       : "Alcatel",
-            "Nintendo" : "Nintendo 3DS",
+            "Nintendo"      : "Nintendo (3DS|Switch)",
             // http://en.wikipedia.org/wiki/Amoi
             "Amoi"          : "Amoi",
             // http://en.wikipedia.org/wiki/INQ
             "INQ"           : "INQ",
+            "OnePlus"       : "ONEPLUS",
             // @Tapatalk is a mobile app; http://support.tapatalk.com/threads/smf-2-0-2-os-and-browser-detection-plugin-and-tapatalk.15565/#post-79039
             "GenericPhone"  : "Tapatalk|PDA;|SAGEM|\bmmp\b|pocket|\bpsp\b|symbian|Smartphone|smartfon|treo|up.browser|up.link|vodafone|\bwap\b|nokia|Series40|Series60|S60|SonyEricsson|N900|MAUI.*WAP.*Browser"
         });
@@ -171,9 +172,11 @@ component output="false" accessors="true"{
         setTabletDevices({
             "iPad"              : "iPad|iPad.*Mobile",
             "NexusTablet"       : "Android.*Nexus[\s]+(7|9|10)",
-            "SamsungTablet"     : "SAMSUNG.*Tablet|Galaxy.*Tab|SC-01C|GT-P1000|GT-P1003|GT-P1010|GT-P3105|GT-P6210|GT-P6800|GT-P6810|GT-P7100|GT-P7300|GT-P7310|GT-P7500|GT-P7510|SCH-I800|SCH-I815|SCH-I905|SGH-I957|SGH-I987|SGH-T849|SGH-T859|SGH-T869|SPH-P100|GT-P3100|GT-P3108|GT-P3110|GT-P5100|GT-P5110|GT-P6200|GT-P7320|GT-P7511|GT-N8000|GT-P8510|SGH-I497|SPH-P500|SGH-T779|SCH-I705|SCH-I915|GT-N8013|GT-P3113|GT-P5113|GT-P8110|GT-N8010|GT-N8005|GT-N8020|GT-P1013|GT-P6201|GT-P7501|GT-N5100|GT-N5105|GT-N5110|SHV-E140K|SHV-E140L|SHV-E140S|SHV-E150S|SHV-E230K|SHV-E230L|SHV-E230S|SHW-M180K|SHW-M180L|SHW-M180S|SHW-M180W|SHW-M300W|SHW-M305W|SHW-M380K|SHW-M380S|SHW-M380W|SHW-M430W|SHW-M480K|SHW-M480S|SHW-M480W|SHW-M485W|SHW-M486W|SHW-M500W|GT-I9228|SCH-P739|SCH-I925|GT-I9200|GT-P5200|GT-P5210|GT-P5210X|SM-T311|SM-T310|SM-T310X|SM-T210|SM-T210R|SM-T211|SM-P600|SM-P601|SM-P605|SM-P900|SM-P901|SM-T217|SM-T217A|SM-T217S|SM-P6000|SM-T3100|SGH-I467|XE500|SM-T110|GT-P5220|GT-I9200X|GT-N5110X|GT-N5120|SM-P905|SM-T111|SM-T2105|SM-T315|SM-T320|SM-T320X|SM-T321|SM-T520|SM-T525|SM-T530NU|SM-T230NU|SM-T330NU|SM-T900|XE500T1C|SM-P605V|SM-P905V|SM-T337V|SM-T537V|SM-T707V|SM-T807V|SM-P600X|SM-P900X|SM-T210X|SM-T230|SM-T230X|SM-T325|GT-P7503|SM-T531|SM-T330|SM-T530|SM-T705|SM-T705C|SM-T535|SM-T331|SM-T800|SM-T700|SM-T537|SM-T807|SM-P907A|SM-T337A|SM-T537A|SM-T707A|SM-T807A|SM-T237|SM-T807P|SM-P607T|SM-T217T|SM-T337T|SM-T807T|SM-T116NQ|SM-P550|SM-T350|SM-T550|SM-T9000|SM-P9000|SM-T705Y|SM-T805|GT-P3113|SM-T710|SM-T810|SM-T815|SM-T360|SM-T533|SM-T113|SM-T335|SM-T715|SM-T560|SM-T670|SM-T677|SM-T377|SM-T567|SM-T357T|SM-T555|SM-T561", // SCH-P709|SCH-P729|SM-T2558|GT-I9205 - Samsung Mega - treat them like a regular phone.
+            // https://en.wikipedia.org/wiki/Pixel_C
+            "GoogleTablet"      : "Android.*Pixel C",
+            "SamsungTablet"     : "SAMSUNG.*Tablet|Galaxy.*Tab|SC-01C|GT-P1000|GT-P1003|GT-P1010|GT-P3105|GT-P6210|GT-P6800|GT-P6810|GT-P7100|GT-P7300|GT-P7310|GT-P7500|GT-P7510|SCH-I800|SCH-I815|SCH-I905|SGH-I957|SGH-I987|SGH-T849|SGH-T859|SGH-T869|SPH-P100|GT-P3100|GT-P3108|GT-P3110|GT-P5100|GT-P5110|GT-P6200|GT-P7320|GT-P7511|GT-N8000|GT-P8510|SGH-I497|SPH-P500|SGH-T779|SCH-I705|SCH-I915|GT-N8013|GT-P3113|GT-P5113|GT-P8110|GT-N8010|GT-N8005|GT-N8020|GT-P1013|GT-P6201|GT-P7501|GT-N5100|GT-N5105|GT-N5110|SHV-E140K|SHV-E140L|SHV-E140S|SHV-E150S|SHV-E230K|SHV-E230L|SHV-E230S|SHW-M180K|SHW-M180L|SHW-M180S|SHW-M180W|SHW-M300W|SHW-M305W|SHW-M380K|SHW-M380S|SHW-M380W|SHW-M430W|SHW-M480K|SHW-M480S|SHW-M480W|SHW-M485W|SHW-M486W|SHW-M500W|GT-I9228|SCH-P739|SCH-I925|GT-I9200|GT-P5200|GT-P5210|GT-P5210X|SM-T311|SM-T310|SM-T310X|SM-T210|SM-T210R|SM-T211|SM-P600|SM-P601|SM-P605|SM-P900|SM-P901|SM-T217|SM-T217A|SM-T217S|SM-P6000|SM-T3100|SGH-I467|XE500|SM-T110|GT-P5220|GT-I9200X|GT-N5110X|GT-N5120|SM-P905|SM-T111|SM-T2105|SM-T315|SM-T320|SM-T320X|SM-T321|SM-T520|SM-T525|SM-T530NU|SM-T230NU|SM-T330NU|SM-T900|XE500T1C|SM-P605V|SM-P905V|SM-T337V|SM-T537V|SM-T707V|SM-T807V|SM-P600X|SM-P900X|SM-T210X|SM-T230|SM-T230X|SM-T325|GT-P7503|SM-T531|SM-T330|SM-T530|SM-T705|SM-T705C|SM-T535|SM-T331|SM-T800|SM-T700|SM-T537|SM-T807|SM-P907A|SM-T337A|SM-T537A|SM-T707A|SM-T807A|SM-T237|SM-T807P|SM-P607T|SM-T217T|SM-T337T|SM-T807T|SM-T116NQ|SM-P550|SM-T350|SM-T550|SM-T9000|SM-P9000|SM-T705Y|SM-T805|GT-P3113|SM-T710|SM-T810|SM-T815|SM-T360|SM-T533|SM-T113|SM-T335|SM-T715|SM-T560|SM-T670|SM-T677|SM-T377|SM-T567|SM-T357T|SM-T555|SM-T561|SM-T713|SM-T719|SM-T813|SM-T819|SM-T580|SM-T355Y?|SM-T280|SM-T817A|SM-T820|SM-W700|SM-P580|SM-T587|SM-P350|SM-P555M|SM-P355M|SM-T113NU|SM-T815Y|SM-T585|SM-T285|SM-T825|SM-W708|SM-T835", // SCH-P709|SCH-P729|SM-T2558|GT-I9205 - Samsung Mega - treat them like a regular phone.
             // http://docs.aws.amazon.com/silk/latest/developerguide/user-agent.html
-            "Kindle"            : "Kindle|Silk.*Accelerated|Android.*\b(KFOT|KFTT|KFJWI|KFJWA|KFOTE|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|WFJWAE|KFSAWA|KFSAWI|KFASWI|KFARWI)\b",
+            "Kindle"            : "Kindle|Silk.*Accelerated|Android.*\b(KFOT|KFTT|KFJWI|KFJWA|KFOTE|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|WFJWAE|KFSAWA|KFSAWI|KFASWI|KFARWI)\b|Android.*Silk/[0-9.]+ like Chrome/[0-9.]+ (?!Mobile)",
             // Only the Surface tablets with Windows RT are considered mobile.
             // http://msdn.microsoft.com/en-us/library/ie/hh920767(v=vs.85).aspx
             "SurfaceTablet"     : "Windows NT [0-9.]+; ARM;.*(Tablet|ARMBJS)",
@@ -415,7 +418,7 @@ component output="false" accessors="true"{
             "Hudl"              : "Hudl HT7S3|Hudl 2",
             // http://www.telstra.com.au/home-phone/thub-2/
             "TelstraTablet"     : "T-Hub2",
-            "GenericTablet"     : "Android.*\b97D\b|Tablet(?!.*PC)|BNTV250A|MID-WCDMA|LogicPD Zoom2|\bA7EB\b|CatNova8|A1_07|CT704|CT1002|\bM721\b|rk30sdk|\bEVOTAB\b|M758A|ET904|ALUMIUM10|Smartfren Tab|Endeavour 1010|Tablet-PC-4|Tagi Tab|\bM6pro\b|CT1020W|arc 10HD|\bJolla\b|\bTP750\b"
+            "GenericTablet"     : "Android.*\b97D\b|Tablet(?!.*PC)|BNTV250A|MID-WCDMA|LogicPD Zoom2|\bA7EB\b|CatNova8|A1_07|CT704|CT1002|\bM721\b|rk30sdk|\bEVOTAB\b|M758A|ET904|ALUMIUM10|Smartfren Tab|Endeavour 1010|Tablet-PC-4|Tagi Tab|\bM6pro\b|CT1020W|arc 10HD|\bJolla\b|\bTP750\b|\bQTAQZ3\b|WVT101|TM1088|KT107"
         });
 
         setOperatingSystems({
@@ -431,7 +434,7 @@ component output="false" accessors="true"{
             // http://msdn.microsoft.com/library/ms537503.aspx
             // https://msdn.microsoft.com/en-us/library/hh869301(v=vs.85).aspx
             "WindowsPhoneOS"    : "Windows Phone 10.0|Windows Phone 8.1|Windows Phone 8.0|Windows Phone OS|XBLWP7|ZuneWP7|Windows NT 6.[23]; ARM;",
-            "iOS"               : "\biPhone.*Mobile|\biPod|\biPad",
+            "iOS"               : "\biPhone.*Mobile|\biPod|\biPad|AppleCoreMedia",
             // http://en.wikipedia.org/wiki/MeeGo
             "MeeGoOS"           : "MeeGo",
             // http://en.wikipedia.org/wiki/Maemo
@@ -451,7 +454,7 @@ component output="false" accessors="true"{
             "Skyfire"         : "Skyfire",
             "Edge"             : "Mobile Safari/[.0-9]* Edge",
             "IE"              : "IEMobile|MSIEMobile", // |Trident/[.0-9]+
-            "Firefox"         : "fennec|firefox.*maemo|(Mobile|Tablet).*Firefox|Firefox.*Mobile",
+            "Firefox"         : "fennec|firefox.*maemo|(Mobile|Tablet).*Firefox|Firefox.*Mobile|FxiOS",
             "Bolt"            : "bolt",
             "TeaShark"        : "teashark",
             "Blazer"          : "Blazer",
@@ -460,6 +463,7 @@ component output="false" accessors="true"{
             // http://en.wikipedia.org/wiki/Midori_(web_browser)
             //"Midori"          : "midori",
             "Tizen"           : "Tizen",
+            "WeChat"          : "\bMicroMessenger\b",
             "UCBrowser"       : "UC.*Browser|UCWEB",
             "baiduboxapp"     : "baiduboxapp",
             "baidubrowser"    : "baidubrowser",
@@ -518,7 +522,7 @@ component output="false" accessors="true"{
             "TV"          : "SonyDTV|HbbTV", // experimental
             "WebKit"      : "(webkit)[ /]([\w.]+)",
             // @todo: Include JXD consoles.
-            "Console"     : "\b(Nintendo|Nintendo WiiU|Nintendo 3DS|PLAYSTATION|Xbox)\b",
+            "Console"     : "\b(Nintendo|Nintendo WiiU|Nintendo 3DS|Nintendo Switch|PLAYSTATION|Xbox)\b",
             "Watch"       : "SM-V700"
         });
 
@@ -555,7 +559,7 @@ component output="false" accessors="true"{
             "Coast"         : ["Coast/[VER]"],
             "Dolfin"        : "Dolfin/[VER]",
             // @reference: https://developer.mozilla.org/en-US/docs/User_Agent_Strings_Reference
-            "Firefox"       : "Firefox/[VER]",
+            "Firefox"       : ["Firefox/[VER]","FxiOS/[VER]"],
             "Fennec"        : "Fennec/[VER]",
             // http://msdn.microsoft.com/en-us/library/ms537503(v=vs.85).aspx
             // https://msdn.microsoft.com/en-us/library/ie/hh869301(v=vs.85).aspx
@@ -572,6 +576,7 @@ component output="false" accessors="true"{
             "MicroMessenger" : "MicroMessenger/[VER]",
             "baiduboxapp"   : "baiduboxapp/[VER]",
             "baidubrowser"  : "baidubrowser/[VER]",
+            "SamsungBrowser": "SamsungBrowser/[VER]",
             "Iron"          : "Iron/[VER]",
             // @note: Safari 7534.48.3 is actually Version 5.1.
             // @note: On BlackBerry the Version is overwriten by the OS.

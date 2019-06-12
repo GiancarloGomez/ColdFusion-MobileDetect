@@ -1,37 +1,28 @@
 {
     "name":"ColdFusion-MobileDetect",
-    "version":"2.1.0",
+    "slug":"coldfusion-mobiledetect",
+    "version":"2.2.0",
     "author":"Giancarlo Gomez <giancarlo.gomez@gmail.com>",
-    "location":"GiancarloGomez/ColdFusion-MobileDetect#v2.1.0",
-    "directory":"",
-    "createPackageDirectory":true,
-    "packageDirectory":"",
-    "homepage":"",
-    "documentation":"",
+    "location":"GiancarloGomez/ColdFusion-MobileDetect",
+    "homepage":"https://github.com/GiancarloGomez/ColdFusion-MobileDetect",
+    "documentation":"https://github.com/GiancarloGomez/ColdFusion-MobileDetect",
+    "bugs":"https://github.com/GiancarloGomez/ColdFusion-MobileDetect/issues",
+    "shortDescription":"A CFC Port of the Mobile_Detect PHP class for detecting mobile devices (including tablets). It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+    "type":"projects",
+    "private":"false",
     "repository":{
         "type":"git",
         "URL":"https://github.com/GiancarloGomez/ColdFusion-MobileDetect"
     },
-    "bugs":"",
-    "slug":"coldfusion-mobiledetect",
-    "shortDescription":"A CFC Port of the Mobile_Detect PHP class for detecting mobile devices (including tablets). It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
-    "description":"",
-    "instructions":"",
-    "changelog":"",
-    "type":"projects",
     "keywords":[
-        
+        "user-agent"
     ],
-    "private":false,
     "engines":[
         {
             "type":"adobe",
             "version":">=11.0.0"
         }
     ],
-    "defaultEngine":"cf11",
-    "defaultPort":0,
-    "projectURL":"http://www.fusedevelopments.com/examples/mobile-detect/",
     "license":[
         {
             "type":"MIT",
@@ -39,54 +30,23 @@
         }
     ],
     "contributors":[
-        "Giancarlo Gomez <giancarlo.gomez@gmail.com>"
+        {
+            "name" : "Giancarlo Gomez",
+            "email" : "giancarlo.gomez@gmail.com",
+            "url" : "https://www.giancarlogomez.dev/"
+        }
     ],
     "dependencies":{
-        
     },
     "devDependencies":{
-        
     },
     "installPaths":{
-        
-    },
-    "scripts":{
-        "postVersion":"package set location='GiancarloGomez/ColdFusion-MobileDetect#v`package version`'",
-        "postPublish":"!git push --follow-tags"
     },
     "ignore":[
         "**/.*",
-        "test",
-        "tests",
-        "readme.md"
-    ],
-    "testbox":{
-        "runner":[
-            {
-                "default":""
-            }
-        ],
-        "labels":[
-            
-        ],
-        "reporter":"",
-        "reporterResults":"",
-        "bundles":[
-            ""
-        ],
-        "directory":{
-            "mapping":"",
-            "recurse":true
-        },
-        "watchers":[
-            
-        ],
-        "notify":{
-            "emails":[
-                
-            ],
-            "growl":"",
-            "URL":""
-        }
-    }
+        "examples/*",
+        "server.json",
+        "readme.md",
+        "license.md"
+    ]
 }
